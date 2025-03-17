@@ -1,0 +1,40 @@
+body{
+    background-color: gray;
+
+
+}
+
+.divProductos{
+    background-color: aliceblue;
+
+}
+
+
+
+
+nav{
+    justify-content: center;
+    
+    
+
+}
+
+button ::view-transition{
+    transition: 5s;
+    border: solid black 2px;
+    color: white;
+    background-color: rgb(171, 170, 168);
+    height: 200%;    
+    
+}
+
+.divContainer{
+    background-color: rgb(14, 13, 12);
+    justify-content: center;
+    text-align: center;
+}
+
+.inputBucar{
+    border-radius: 10%;
+    width: 30%;
+}
