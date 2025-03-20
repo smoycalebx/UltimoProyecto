@@ -5,6 +5,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 import Inicio from '../pages/Inicio';
+import Login from '../pages/Login';
+import Register from '../pages/Register';
+import Empleo from '../pages/Empleo';
+import Admin from '../pages/Admin';
 
 
 function Ruta() {
@@ -18,6 +22,15 @@ function Ruta() {
                         
 
                             <Route path="/Inicio" element={<Inicio/>}/>
+                            <Route path="/Login" element={<Login/>}/>
+                            <Route path="/Register" element={<Register/>}/>
+                            <Route path="/Empleo" element={<Empleo/>}/>
+                            <Route path="/Admin" element={<Admin/>}/>
+
+
+
+
+
 
                       
                             

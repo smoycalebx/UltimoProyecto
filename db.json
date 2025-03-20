@@ -1,0 +1,21 @@
+{
+  "register": [
+    {
+      "id": "2ce6",
+      "nombre": "Caleb",
+      "apellido": "Villegas",
+      "cedula": "604930891",
+      "contraseña": "Goldo111",
+      "rol": "admin"
+    },
+    {
+      "id": "85a9",
+      "nombre": "steven",
+      "apellido": "salas",
+      "cedula": "1234567",
+      "contraseña": "1122",
+      "rol": "user"
+    }
+  ],
+  "productos" :[]
+}

@@ -4,7 +4,7 @@ import FormInicio from '../components/FormInicio'
 function Inicio() {
   return (
     <div>
-      <FormInicio/>
+          <FormInicio/>
     </div>
   )
 }
