@@ -9,6 +9,7 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Empleo from '../pages/Empleo';
 import Admin from '../pages/Admin';
+import Pago from '../pages/Pago';
 
 
 function Ruta() {
@@ -26,6 +27,8 @@ function Ruta() {
                             <Route path="/Register" element={<Register/>}/>
                             <Route path="/Empleo" element={<Empleo/>}/>
                             <Route path="/Admin" element={<Admin/>}/>
+                            <Route path="/Pago" element={<Pago/>}/>
+
 
 
 

@@ -97,3 +97,49 @@ body{
 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+
+#caliper{
+
+    height: 40%;
+    width: 25%;
+}
+
+
+#caliper2{
+    height: 40%;
+    width: 25%;
+
+
+}
+
+
+#caliper3{
+    height: 40%;
+    width: 25%;
+
+
+
+}
+
+
+#caliper4{
+    height: 35%;
+    width: 25%;
+
+
+}
+
+.textP{
+    color: white;
+    background-color: #4a4242;
+    border: solid rgb(16, 15, 15) 2px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+#fin{
+    background-color: black;
+    color: white;
+}

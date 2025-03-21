@@ -1,4 +1,4 @@
-    import React, {useEffect, useState } from 'react';
+    import React,{useEffect, useState } from 'react';
     import Allamados from './Llamados/Allamados';
     import Swal from 'sweetalert2';
     import { useNavigate } from 'react-router-dom';
@@ -15,18 +15,19 @@
     const navigate = useNavigate()
 
 
-    useEffect(() => {
+
+
+        useEffect(() => {
         async function mostrar() {
-            try {
-            const datos = await Allamados.getUsers();
-            console.log("Datos obtenidos:", datos);
-            setFormulario(datos);
-            } catch (error) {
-            console.error("Error al obtener los datos:", error);
-            }
+          const datos =await Allamados.getUsers()
+          
+          setFormulario(datos)
         }
         mostrar();
-        }, []);
+        
+      }, []);
+    
+
 
     
 

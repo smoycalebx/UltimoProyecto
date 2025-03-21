@@ -1,6 +1,6 @@
 async function getUsers() {
     try {
-        const response = await fetch('http://localhost:3000/productos', {
+        const response = await fetch('http://localhost:3000/producto', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -23,9 +23,8 @@ async function postUsers(producto,cantidad,precio,) {
             producto,
             cantidad,
             precio,
-            rol:"user"
         };
-        const response = await fetch("http://localhost:3000/productos", {
+        const response = await fetch("http://localhost:3000/producto", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -48,7 +47,7 @@ async function updateUsers(producto,cantidad,precio,id)
             precio
             
         };
-        const response = await fetch(`http://localhost:3000/productos/${id}`, {
+        const response = await fetch(`http://localhost:3000/producto/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -64,7 +63,7 @@ async function updateUsers(producto,cantidad,precio,id)
 //////////////LLAMADO DELETE/////////////
 async function deleteUser(id) {
     try {
-        const response = await fetch(`http://localhost:3000/productos/${id}`, {
+        const response = await fetch(`http://localhost:3000/producto/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'

@@ -15,7 +15,46 @@
       "cedula": "1234567",
       "contraseña": "1122",
       "rol": "user"
+    },
+    {
+      "id": "baef",
+      "nombre": "jocksan",
+      "apellido": "ruiz",
+      "cedula": "12345678",
+      "contraseña": "nebjnxujwn",
+      "rol": "user"
     }
   ],
-  "productos" :[]
+  "producto": [
+    {
+      "id": "4fd5",
+      "producto": "fajas de freno",
+      "cantidad": "7",
+      "precio": "15.000"
+    },
+    {
+      "id": "c33e",
+      "producto": "fajas de freno",
+      "cantidad": "7",
+      "precio": "15.000"
+    },
+    {
+      "id": "83b8",
+      "producto": "fajas de freno",
+      "cantidad": "7",
+      "precio": "15.000"
+    },
+    {
+      "id": "1515",
+      "producto": "fajas de freno",
+      "cantidad": "7",
+      "precio": "15.000"
+    },
+    {
+      "id": "77ef",
+      "producto": "fajas de freno",
+      "cantidad": "7",
+      "precio": "15.000"
+    }
+  ]
 }
