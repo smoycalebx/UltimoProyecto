@@ -1,6 +1,6 @@
-async function getProductos() {
+async function getUsers() {
     try {
-        const response = await fetch('http://localhost:3000/producto', {
+        const response = await fetch('http://localhost:3000/carrito', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -17,15 +17,16 @@ async function getProductos() {
     }
 }
 //////////LLAMADO POST//////////
-async function postProductos(producto,cantidad,precio,imagen) {
+async function postUsers(nombre,tarjeta,fecha,cvv) {
     try {
         const userData = {
-            producto,
-            cantidad,
-            precio,
-            imagen
+            nombre,
+            tarjeta,
+            fecha,
+            cvv,
+            rol:"clienete"
         };
-        const response = await fetch("http://localhost:3000/producto", {
+        const response = await fetch("http://localhost:3000/carrito", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -39,16 +40,16 @@ async function postProductos(producto,cantidad,precio,imagen) {
     }
 }
 //////////////LLAMADO UPDATE/////////////
-async function updateUsers(producto,cantidad,precio,id)
+async function updateUsers(producto,cantidad,costo,envio,id)
 {
     try {
         const userData = {
             producto,
             cantidad,
-            precio
-            
+            costo,
+            envio
         };
-        const response = await fetch(`http://localhost:3000/producto/${id}`, {
+        const response = await fetch(`http://localhost:3000/carrito/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -62,9 +63,9 @@ async function updateUsers(producto,cantidad,precio,id)
     }
 }
 //////////////LLAMADO DELETE/////////////
-async function deleteProductos(id) {
+async function deleteUser(id) {
     try {
-        const response = await fetch(`http://localhost:3000/producto/${id}`, {
+        const response = await fetch(`http://localhost:3000/carrito/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -79,4 +80,4 @@ async function deleteProductos(id) {
         throw error;
     }
 }
-export default { getProductos, postProductos, updateUsers, deleteProductos };
+export default { getUsers, postUsers, updateUsers, deleteUser };

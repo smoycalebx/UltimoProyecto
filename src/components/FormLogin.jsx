@@ -1,7 +1,7 @@
     import React,{useEffect, useState } from 'react';
     import Allamados from './Llamados/Allamados';
     import Swal from 'sweetalert2';
-    import { useNavigate } from 'react-router-dom';
+    import { Link, useNavigate } from 'react-router-dom';
 
     function FormInicio() {
     const [Nombre, setNombre] = useState('');
@@ -32,21 +32,31 @@
     
 
     const Click = async () => {
+        if (!Nombre || !Apellido || !Cedula || !Contraseña) {
+              Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "No has llenado los campos!",
+              });
+              return;
+            }
 
         const Usuarios = Formulario.filter(users => users.nombre === Nombre && users.apellido=== Apellido && users.contraseña===Contraseña);
         console.log(Usuarios[0].rol);
         
-
+           localStorage.setItem("nombre",Nombre)
 
         if (Usuarios.length !== 0) {
             limpiarCampos()
 
             if (Usuarios[0].rol === "admin") {
-                navigate("../Admin");
+                
+                navigate("/Admin");
             }
 
-            else 
-                {navigate("../Login")
+            else {
+                navigate("/Inicio")
+
 
             }
 
@@ -71,7 +81,7 @@
 
 
 
-    const limpiarCampos = () => {
+     const limpiarCampos = () => {
         setNombre('');
         setApellido('');
         setCedula('');
@@ -82,7 +92,7 @@
         <div>
 
         <h1>Login</h1>
-        <p>Buscas trabajo? <a href="http://localhost:5174/Empleo">Postulate aquí</a></p>
+        <p>Buscas trabajo?<Link to="/Empleo">postulate aquí</Link></p>
         <label>Nombre:</label>
         <input type="text" value={Nombre} onChange={(e) => setNombre(e.target.value)} />
 
@@ -102,7 +112,7 @@
         <div className='divRest'>
             
                 </div>
-                <p>Ya tienes cuenta? <a href="http://localhost:5174/Register">Crear cuenta</a></p>
+                <p>Ya tienes cuenta? <Link to="/Register">Crear cuenta aquí</Link></p>
 
 
         </div>

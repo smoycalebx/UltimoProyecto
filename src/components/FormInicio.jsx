@@ -1,107 +1,137 @@
-import React from 'react'
-import '../style/Inicio.css'
-import icono from "../img/icono.png"
-import ProductosPrin from "../img/ProductosPrin.png"
-import caliper from "../img/caliper.png"
-import caliper2 from "../img/caliper2.png"
-import caliper3 from "../img/caliper3.png"
-import caliper4 from "../img/caliper4.png"
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "../style/Inicio.css";
+import {useEffect, useState } from 'react';
+import icono from "../img/icono.png";
+import ProductosPrin from "../img/ProductosPrin.png";
+
+import Bllamados from "./Llamados/Bllamados";
+
+// Imágenes de productos
 
 
-import { useNavigate } from 'react-router-dom'
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 function FormInicio() {
+  const navigate = useNavigate();
+
+  const [productos,setProductos]= useState([])
+
+        useEffect(() => {
+        async function mostrar() {
+        const datos =await Bllamados.getProductos()
+          
+        setProductos(datos)
+        }
+        mostrar();
+        
+      }, []);
 
 
 
 
-  const navigate = useNavigate()
+  function Conocenos() {
+    navigate("/Conocenos");
 
-  function Productos() {
-navigate("/Login")
     
   }
 
 
 
-
-
-  
-  return (
-
-      
-    <div className='divContainer'>
-       <div className='divIcono'>
-
-<img src={icono} alt="Autos" />
-</div>
-
-        <nav>
-            <button onClick={"Productos"}>Productos</button>
-            <button>estadisticas de Ventas</button>
-            <button>Ventas de Autos</button>
-            <button>Contactenos</button>
-            <button>Ruleta</button>
-            <input type="text" className='inputBucar' placeholder='Buscar Productos' />
-            <button>enviar</button>
-        </nav>
-        <p className='micuenta'> <a href="http://localhost:5174/Login">Mi cuenta</a></p>
-        <h1 className='h1Productos'>Productos con 30% de descuento!</h1>
-        <img src={ProductosPrin} alt="ProductosPrin" />
-    <div>
-      
-      <div id='containerProdo'>
-
-      <div >
-        <img src={caliper}  alt="" id='caliper' />
-
-      </div>
-
-      <div>
-
-        <img src={caliper2} alt="" id='caliper2' />
-
-      </div>
-
-      <div>
-
-        <img src={caliper3} alt="" id='caliper3' />
-
-      </div>
-      <div>
-
-        <img src={caliper4} alt="" id='caliper4' />
-        
-      </div>
-
-      </div>
-
-
-
-      <div>
-        <p className='textP'>⭐ Reseña de MoochisCars: Tu Mejor Opción en Repuestos y Servicios Automotrices
-Si estás buscando repuestos automotrices de calidad, tanto nuevos como de segunda mano, MoochisCars es la mejor opción. Esta plataforma destaca por su variedad de productos, precios accesibles y una experiencia de compra sencilla y segura.
-
-🔹 Amplia variedad de repuestos – Encuentra desde piezas de motor hasta accesorios y carrocería.
-🔹 Disponibilidad en tiempo real – Sabrás si el producto está en stock antes de comprarlo.
-🔹 Vista previa de productos – Observa imágenes detalladas antes de tomar una decisión.
-🔹 Servicios de reparación y mantenimiento – Conecta con expertos en mecánica, electricidad y pintura automotriz.
-🔹 Notificaciones automáticas – Mantente informado sobre ofertas, nuevos productos y disponibilidad.
-
-MoochisCars no solo facilita la compra de repuestos, sino que también ayuda a profesionales del sector a ofrecer sus servicios, promoviendo empleo y dinamizando el mercado automotriz.
-
-Si buscas calidad, buenos precios y una plataforma confiable, ¡MoochisCars es tu mejor elección! 🚗⚙️🔥
-
-</p>
-
-
-
-<div id='fin'><h1>brrr</h1></div>
-      </div>
-    </div>
-    </div>
-    
-    
-  )
+function Vermas() {
+  navigate("/carrito");
 }
 
-export default FormInicio
+
+function Estadistica() {
+
+
+  navigate("/Estadistica");
+  
+}
+
+
+function Ruleta() {
+  navigate("/Ruleta");
+  
+
+  
+}
+
+
+function Contactenos() {
+  navigate("/Contactenos");
+}
+
+
+
+  // Datos de los productos
+
+
+  return (
+    <div className="divContainer">
+      <div className="divIcono">
+        <img  src={icono} alt="Autos" />
+      </div>
+
+      <nav>
+        <button onClick={Conocenos}>Quienes somos</button>
+        <button onClick={Estadistica}>Estadísticas de Ventas</button>
+        <button onClick={Contactenos}>Contáctenos</button>
+        <button onClick={Ruleta}>Ruleta</button>
+        <input type="text" className="inputBuscar" placeholder="Buscar Productos" />
+        <button>Enviar</button>
+      </nav>
+
+      <p className="micuenta">
+        
+      <Link  id = "miCuenta"to="/Login">Mi cuenta</Link>
+      </p>
+      <i className="bi bi-cart4"></i>
+
+      <h1 className="h1Productos">Productos con 30% de descuento!</h1>
+      <img src={ProductosPrin} alt="Productos en descuento" />
+
+      <div className="divContenedorImg">
+        {productos.map((producto, index) => (
+          <div key={index} className="productoCard">
+
+           
+            <h3>{producto.producto}</h3>
+
+            <img src={producto.imagen} alt="" />
+            <p>Precio: <strong>{producto.precio}</strong></p>
+        
+            <button onClick={Vermas} className="verMas">Ver más</button>
+          </div>
+        ))}
+      </div>
+
+      <div className="textoInformativo">
+        <p>
+          ⭐ <strong>Reseña de MoochisCars:</strong> Tu Mejor Opción en Repuestos y Servicios Automotrices
+          <br />
+          Si estás buscando repuestos automotrices de calidad, tanto nuevos como de segunda mano, MoochisCars es la mejor opción.
+          <br />
+          🔹 <strong>Amplia variedad de repuestos</strong> – Encuentra desde piezas de motor hasta accesorios y carrocería.
+          <br />
+          🔹 <strong>Disponibilidad en tiempo real</strong> – Sabrás si el producto está en stock antes de comprarlo.
+          <br />
+          🔹 <strong>Vista previa de productos</strong> – Observa imágenes detalladas antes de tomar una decisión.
+          <br />
+          🔹 <strong>Servicios de reparación y mantenimiento</strong> – Conecta con expertos en mecánica, electricidad y pintura automotriz.
+          <br />
+          🔹 <strong>Notificaciones automáticas</strong> – Mantente informado sobre ofertas, nuevos productos y disponibilidad.
+          <br />
+          <strong>Si buscas calidad, buenos precios y una plataforma confiable, ¡MoochisCars es tu mejor elección! 🚗⚙️🔥</strong>
+        </p>
+      </div>
+
+      <div id="fin">
+        
+      </div>
+    </div>
+  );
+}
+
+export default FormInicio;

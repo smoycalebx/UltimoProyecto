@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import Allamados from "./Llamados/Allamados";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 function FormRegister() {
   const [Nombre, setNombre] = useState("");
   const [Apellido, setApellido] = useState("");
   const [Cedula, setCedula] = useState("");
   const [Contraseña, setContraseña] = useState("");
+
+  const navigate = useNavigate()
+
+
 
 
 
@@ -17,6 +22,7 @@ function FormRegister() {
         icon: "error",
         title: "Oops...",
         text: "No has llenado los campos!",
+        
       });
       return;
     }
@@ -24,6 +30,7 @@ function FormRegister() {
     // Llamada a la función para registrar usuario
     await Allamados.postUsers(Nombre, Apellido, Cedula.toString(), Contraseña);
     limpiarCampos()
+    navigate("/login")
 
 
   };

@@ -3,7 +3,7 @@ import React from 'react'
 function FormPago() {
   return (
     <div>
-      <p> Puedes hacer tus metodos de pago aquí</p>
+      <p> Apartado de Carrito</p>
       
     </div>
   )
