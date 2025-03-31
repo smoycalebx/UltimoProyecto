@@ -87,7 +87,7 @@ function Contactenos() {
         
       <Link  id = "miCuenta"to="/Login">Mi cuenta</Link>
       </p>
-      <i className="bi bi-cart4"></i>
+      <Link  id = "carrito"to="/ApartadoCarrito"><i className="bi bi-cart4"></i></Link>
 
       <h1 className="h1Productos">Productos con 30% de descuento!</h1>
       <img src={ProductosPrin} alt="Productos en descuento" />
@@ -127,7 +127,16 @@ function Contactenos() {
         </p>
       </div>
 
-      <div id="fin">
+      <div id="footer">
+        <p>Creditos al creador de la página</p>
+        <h3>Caleb Obando villegas</h3>
+        <h1> <i class="bi bi-geo-alt"></i>ubicacion</h1>
+        <h2><i class="bi bi-instagram"></i><i class="bi bi-facebook"></i> Redes sociales</h2>
+        <h2> <i class="bi bi-alarm"></i>Horarios de atencion al clienete:
+        10am a 5pm , 
+        2pm a 10pm</h2>
+
+        
         
       </div>
     </div>

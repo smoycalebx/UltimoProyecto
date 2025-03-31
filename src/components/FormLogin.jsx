@@ -44,7 +44,7 @@
         const Usuarios = Formulario.filter(users => users.nombre === Nombre && users.apellido=== Apellido && users.contraseña===Contraseña);
         console.log(Usuarios[0].rol);
         
-           localStorage.setItem("nombre",Nombre)
+           localStorage.setItem("nombre","token")
 
         if (Usuarios.length !== 0) {
             limpiarCampos()
@@ -102,14 +102,14 @@
         <label>Cédula:</label>
         <input type="number" value={Cedula} onChange={(e) => setCedula(e.target.value)} />
 
-        <label>Crear Contraseña:</label>
+        <label>Contraseña:</label>
         <input type="password" value={Contraseña} onChange={(e) => setContraseña(e.target.value)} />
 
         <div className='divButton'>
             <button onClick={Click}>Enviar</button>
         </div>
 
-        <div className='divRest'>
+        <div className=''>
             
                 </div>
                 <p>Ya tienes cuenta? <Link to="/Register">Crear cuenta aquí</Link></p>
